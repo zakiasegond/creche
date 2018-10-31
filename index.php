@@ -23,32 +23,19 @@
 
 						<p><form  method="POST" action="listActivity.php">	
 							<button type="submit" class="btn btn-lg btn-success" name="ListActivity" id="ListActivity" >Liste Activités</button>
-							<!-- <button type="submit" class="btn btn-success" name="administrateur" id="administrateur">Administrateur</button> -->
+							
 						</form></p>
-						<!-- <div class="col-md-2"></div> -->
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- <div id="formAdmin"></div> -->
 	</head>
 
 	<body>
 
 		<?php
-			// require('Asso.class.php');
 			ini_set('display_errors', 1);
 			
-			// if(isset($_POST['listChildren']))
-			// {
-			// 	header("location: listChildren.php");
-			// }
-
-			// if(isset($_POST['listActivity']))
-			// {
-			//  	header("location: listActivity.php");
-			// }
-
 			if(isset($_POST['envoyer']))
 			{
 				$login = $_POST['login'];
@@ -63,15 +50,6 @@
 					}
 				}
 
-				// if($manager == 1)
-				// {
-				// 	header("location: statistique.php");
-				// }
-
-				// else
-				// {
-				// 	echo "Vous n'êtes pas un administrateur ! ";
-				// }
 			}
 
 		?>

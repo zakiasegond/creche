@@ -1,0 +1,42 @@
+if (isset($_GET['see'])) 
+{    
+    $id = $_GET['input'];
+   $id = intval($id);
+   $reponse = $bdd->query('SELECT * FROM children WHERE children_id='.$id) ;    while($donnees=$reponse->fetch()) 
+   {
+       echo
+           '<div class="card" style="width: 18rem;">
+           <div class="card-header">
+               '.$donnees['children_firstname']. ' ' .$donnees['children_lastname'].'
+           </div>
+               <ul class="list-group list-group-flush">
+                   <li class="list-group-item">'.$donnees['children_birthday'].'</li>
+                   <li class="list-group-item">'.$donnees['children_adress'].'</li>
+                   <li class="list-group-item">'.$donnees['children_parents_contact'].'</li>
+                   <li class="list-group-item">'.$donnees['children_remarks'].'</li>
+               </ul>
+           </div>';    
+    };
+
+};
+
+
+
+
+
+
+while($donnees=$reponse->fetch()) {
+           $cmpt++;
+           echo
+               '<tr>
+                   <th scope="row">'.$donnees['children_id'].'</th>
+                   <form action="detailsChild.php" method="get">
+                       <td>
+                           <button class="btn btn-light " name="see" type="submit" >'.$donnees['children_firstname'].'</button>
+                           <input class="inputid" name="input" value=' . $donnees['children_id'] . '>
+                       </td>
+                       <td>'.$donnees['children_lastname'].'
+                       </td>
+                   </form>
+               </tr>';
+       };

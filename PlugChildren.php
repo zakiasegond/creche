@@ -9,7 +9,6 @@
         </head>
         <body>
             <h1>Fiche Enfants</h1>
-            <!-- <h2>Bienvenue sur le formulaire d'inscription</h2> -->
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -32,13 +31,6 @@
                 <input type='date' class="form-control" />
             </div>
 
-            <!--  <div class="input-group mb-3">
-                <div class="input-group date" id="datetimepicker1">
-                    <span class="input-group-text" id="basic-addon2">Birthday</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            </div>
-     -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">Adress</span>

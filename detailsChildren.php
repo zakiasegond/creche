@@ -3,7 +3,6 @@
 		<head>
 			<title class="blog">liste enfants</title>
 			<link href="bootstrap.min.css" rel="stylesheet">
-			<!-- <link rel=Stylesheet type="text/css" href=style.css> -->
 		</head>
 		<body>
 			

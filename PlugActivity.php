@@ -7,10 +7,9 @@
         <title>fiche Activités</title>
         
     </head>
-    
+
     <body>
         <h1>Fiche Activités</h1>
-        <!-- <h2>Bienvenue sur le formulaire d'inscription</h2> -->
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -33,19 +32,6 @@
             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
         </div>
 
-        <!-- <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">Contact Parents</span>
-            </div>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-
-        <div class="input-group paddingBot">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Remarks</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div> -->
         <div>
             <button id="save" name="save" type="submit" class="btn btn-primary">Enregistrer/Modifier</button>
             <button id="delete" name="delete" type="submit" class="btn btn-primary">Supprimer</button>
