@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -52,7 +57,7 @@
 					$req->closeCursor();
 		    	?>
    			</table>
-
+				<em><a href="index.php?localisation=<?php echo $donnees['id']; ?>">Retour Accueil</a></em>
     	</div>
 
 			<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

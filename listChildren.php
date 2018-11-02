@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +12,9 @@
 	<body>
 				
 		<h1 class="text-center">Liste Enfants</h1>
+
+    	<em><a href="PlugChildren.php?localisation=<?php echo $donnees['id']; ?>">Formulaire Ajout</a></em>
+
 		<?php
 			$pdo = new PDO('mysql:host=localhost;dbname=creche', 'segond', 'loudmila32');
 			try
@@ -23,7 +31,7 @@
 		?>
 
 
-
+		
 		<div class="news  col-sm-9" >
 			<table class="table table-striped">
 			 <thead>
@@ -60,8 +68,8 @@
 		    	?>
 		    	
    			</table>
+   			<em><a href="index.php?localisation=<?php echo $donnees['id']; ?>">Retour Accueil</a></em>
 
-    		<em><a href="PlugChildren.php?localisation=<?php echo $donnees['id']; ?>">Formulaire Ajout</a></em>
     	</div>
 
 		<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

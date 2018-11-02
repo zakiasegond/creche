@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
     <html lang="fr">
 
@@ -10,6 +15,7 @@
         <body>
             <h1>Fiche Enfants</h1>
 
+            <em><a href="index.php?localisation=<?php echo $donnees['id']; ?>">Retour Accueil</a></em>
 
             <form method="post">
               <div class="form-row">
@@ -86,7 +92,10 @@
     }
 
 ?>
-            <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-        </body>
-    </html>
+         <em><a href="listChildren.php?localisation=<?php echo $donnees['id']; ?>">Page Précédente</a></em>
+
+
+        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    </body>
+</html>

@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
 	<html>
 
@@ -31,7 +36,7 @@
 		</div>
 	</head>
 
-	
+	<center><img src="index.jpeg"  alt="" width="400px;" height="400px;"></div></center>
 
 	<body>
 

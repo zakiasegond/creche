@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,6 +16,7 @@
     <body>
         
         <h1 class="text-center">Fiche Activités</h1>
+            <em><a href="index.php?localisation=<?php echo $donnees['id']; ?>">Retour Accueil</a></em>
 
          <form method="post">
               <div class="form-row">
@@ -67,8 +73,8 @@
         header('Location: listActivity.php');
       
     }
-
 ?>
+         <em><a href="listActivity.php?localisation=<?php echo $donnees['id']; ?>">Page Précédente</a></em>
 
 
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
