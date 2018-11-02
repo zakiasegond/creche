@@ -153,3 +153,56 @@ if(!empty($_POST['submit'])){
 </body>
 
 </html>
+
+
+
+
+
+<?php
+        if(!empty($_POST['submit'])){
+
+    if (!empty($_POST['activity_name']) && !empty($_POST['activity_type']) && !empty($_POST['activity_number_max_child'])){
+
+        try {
+
+            //Pour éviter les erreur.
+
+            $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+
+            // Connexion à la base de données.
+
+            $bdd = new PDO('mysql:host=localhost;dbname=creche;charset=utf8', 'segond','loudmila32', $pdo_options);
+
+            //Ajout du nouvel article dans la base de donnée.
+
+            $req = $bdd->prepare('INSERT INTO activity(activity_name, activity_type, activity_number_max_child)
+
+                VALUES(:activity_name, :activity_type, :activity_number_max_child)');
+
+            $req->execute(array(
+
+                ':activity_name' => $_POST['activity_name'],
+
+                ':activity_type' => $_POST['activity_type'],
+
+                ':activity_number_max_child' => $_POST['activity_number_max_child']
+
+            ));
+
+            header('Location: listActivity.php');
+
+        }
+
+        catch (Exception $e){
+
+            die('Erreur : ' . $e->getMessage());
+
+        }
+
+    }else{
+
+        echo  "<script>alert( 'Erreur, Remplissez tous les champs!');</script>"; 
+
+    }
+
+}

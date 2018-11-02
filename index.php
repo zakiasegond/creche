@@ -3,7 +3,7 @@
 
 		<head>
 			<meta charset="utf-8">
-			<link href="bootstrap.min.css" rel="stylesheet">
+			<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 			<title>Crèche "Le Lapin Bleu"</title>
 		</head>
 
@@ -31,6 +31,8 @@
 		</div>
 	</head>
 
+	
+
 	<body>
 
 		<?php
@@ -53,5 +55,7 @@
 			}
 
 		?>
+		<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	</body>
 </html>

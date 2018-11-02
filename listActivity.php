@@ -3,13 +3,15 @@
 <html>
 
 	<head>
-		<title class="blog">liste enfants</title>
-		<link href="bootstrap.min.css" rel="stylesheet">
+		<title class="blog">liste activités</title>
+		<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 
 	<body>
-		
-		<h1>Liste Activités</h1>
+		<h1 class="text-center">Liste Activités</h1>
+
+    	<em><a href="PlugActivity.php?localisation=<?php echo $donnees['id']; ?>">Formulaire d'Ajout</a></em>
+
 		<?php
 			$pdo = new PDO('mysql:host=localhost;dbname=creche', 'segond', 'loudmila32');
 			try
@@ -25,21 +27,35 @@
 			$req = $bdd->query('SELECT * FROM `activity` WHERE activity_id');
 		?>
 
-
+		
 		<div class="news  col-sm-9" >
    			<table class="table table-striped">
-    
+				 <thead>
+				   <tr>
+				     <!-- <th scope="col"></th> -->
+				     <th scope="col">Nom</th>
+				     <th scope="col">Type</th>
+				     <th scope="col">Nombre Max Enfants</th>
+				     <th scope="col"></th>
+				   </tr>
+				 </thead>
+				 <tbody>
+				 	
+				
 				<?php
 					while ($donnees = $req->fetch())
 					{
-		    			echo "<tr><td> " . $donnees['activity_name'] . "</td></tr>" ;
-					} // Fin de la boucle des articles.
+		    			echo "<tr><td> " . $donnees['activity_name'] . "</td><td>" . $donnees['activity_type'] . "</td><td>" . $donnees['activity_number_max_child'] . "</td></tr>" ;
+					} 
+
+					// Fin de la boucle des articles.
 					$req->closeCursor();
 		    	?>
    			</table>
 
-    		<em><a href="PlugActivity.php?localisation=<?php echo $donnees['id']; ?>">Formulaire</a></em>
     	</div>
 
+			<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	</body>
 </html>

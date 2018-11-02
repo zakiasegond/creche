@@ -10,51 +10,83 @@
         <body>
             <h1>Fiche Enfants</h1>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Firstname</span>
+
+            <form method="post">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="input">Firstname</label>
+                  <input name="firstname" type="text" class="form-control" id="inputFirstname" placeholder="firstname">
                 </div>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">Lastname</span>
+                <div class="form-group col-md-6">
+                  <label for="input">Lastname</label>
+                  <input name="lastname" type="text" class="form-control" id="inputLastname" placeholder="lastname">
                 </div>
-                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            </div>
+              </div>
 
-            <div class='input-group date' id='datetimepicker1'>
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar">Birthday</span>
-                    </div>
-                <input type='date' class="form-control" />
-            </div>
+              <div class="form-group">
+                <label for="inputAddress">Adress</label>
+                <input name="adress" type="text" class="form-control" id="inputAdress" placeholder="adress">
+              </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">Adress</span>
+              <div class="form-group">
+                <label for="input">Birthday</label>
+                <input name="birthday" type="date" class="form-control" id="inputBirthday" placeholder="birthday">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="input">Contact Parents</label>
+                  <input name="contact" type="text" class="form-control" id="inputContact">
                 </div>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">Contact Parents</span>
+                <div class="form-group col-md-2">
+                  <label for="input">Remarks</label>
+                 <textarea name="remarks" type="textarea" class="form-control" aria-label="With textarea"></textarea>
                 </div>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            </div>
+              </div>
+              <button name="save" type="submit" class="btn btn-primary">Enregistrer</button>
+              <!-- <button name="delete" type="submit" class="btn btn-primary">Supprimer</button> -->
+            </form>
 
-            <div class="input-group paddingBot">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Remarks</span>
-                </div>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
-            </div>
-            <div>
-                <button id="save" name="save" type="submit" class="btn btn-primary">Enregistrer/Modifier</button>
-                <button id="delete" name="delete" type="submit" class="btn btn-primary">Supprimer</button>
-            </div>
 
+<?php
+
+    if(isset($_POST['save']))
+    {
+
+        try 
+        {
+         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+
+         $bdd = new PDO('mysql:host=localhost;dbname=creche;charset=utf8', 'segond', 'loudmila32', $pdo_options);
+        }
+
+        catch (Exception $e)
+        {
+
+            die('Erreur : ' . $e->getMessage());
+
+        }
+
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $birthday= $_POST['birthday'];
+        $adress = $_POST['adress'];
+        $contact = $_POST['contact'];
+        $remarks = $_POST['remarks'];
+
+        
+        $bdd->query("INSERT INTO children(children_firstname, children_lastname, children_birthday, children_adress, children_contact_parents, children_remarks)
+
+            VALUES ('" . $firstname . "', '" . $lastname . "', '" . $birthday ."', '" . $adress ."', '" . $contact ."', '" . $birthday ."')");
+
+        header('Location: listChildren.php');
+      
+    }
+
+?>
+            <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
         </body>
     </html>
